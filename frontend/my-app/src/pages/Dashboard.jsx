@@ -73,7 +73,7 @@ export default function Dashboard() {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/bookmarks', 
+        'https://link-saver-auto-summary-ncj5.onrender.com/api/bookmarks', 
         { url, tags: tagList }, 
         {
           headers: {
