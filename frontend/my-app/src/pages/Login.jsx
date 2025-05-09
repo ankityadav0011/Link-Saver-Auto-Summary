@@ -15,7 +15,7 @@ export default function Login() {
       nav('/dashboard');
       setTimeout(() => {
         alert("Welcome to the Bookmark Manager ,Do u want to have a sweet coffee like You!"); 
-      }, 1000);
+      }, 3000);
     } catch {
       alert('Login failed');
     }
