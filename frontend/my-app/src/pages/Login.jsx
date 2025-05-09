@@ -14,19 +14,50 @@ export default function Login() {
       localStorage.setItem('token', res.data.token);
       nav('/dashboard');
       setTimeout(() => {
-        alert("Welcome to the Bookmark Manager ,Do u want to have a sweet coffee like You!"); 
-      }, 3000);
+        alert("Welcome to the Bookmark Manager, Do you want to have a sweet coffee like You!");
+      }, 1000);
     } catch {
       alert('Login failed');
     }
   };
 
+  const handleNavigateToRegister = () => {
+    nav('/register'); 
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button type="submit">Login</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h2>Login</h2>
+        <input
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          placeholder="Password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Login</button>
+      </form>
+      <p style={{ marginTop: '1rem' }}>New user?</p>
+      <button
+        onClick={handleNavigateToRegister}
+        style={{
+          backgroundColor: '#007bff',
+          color: '#fff',
+          border: 'none',
+          padding: '8px 16px',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          fontWeight: 'bold',
+          marginTop: '8px',
+        }}
+      >
+        Register
+      </button>
+    </div>
   );
 }
